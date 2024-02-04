@@ -26,7 +26,4 @@ while True:
 print(
     f"Okay I won {my_wins} times and bot won {bot_wins} times. So guess who is the winner")
 
-
-if __name__ == "__main__":
-    main()
        
