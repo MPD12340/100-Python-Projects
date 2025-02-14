@@ -8,6 +8,9 @@ class Array:
         self._a[self._nitems] = item
         self._nitems += 1
 
+    def __len__(self):
+        return self._nitems
+
     def search(self, item):
         for i in range(self._nitems):
             if self._a[i] == item:
@@ -18,9 +21,11 @@ class Array:
     def delete(self, item):
         for j in range(self._nitems):
             if self._a[j] == item:
-                for k in range(j, self._nitems):
+                for k in range(j, self._nitems - 1):  # It prevents index error
                     self._a[k] = self._a[k + 1]
                 self._nitems -= 1
+                return True
+        return False
 
     def traverse(self):
         for j in range(self._nitems):
